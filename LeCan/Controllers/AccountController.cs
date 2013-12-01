@@ -32,17 +32,17 @@ namespace LeCan.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(string inputName,string inputPassword)
         {
-            if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
+            string is_error = null;
+            if (inputName=="yoyo"&&inputPassword=="123456")
             {
-                return RedirectToLocal(returnUrl);
+                RedirectToAction("~/home/index");
             }
-
+               is_error = "用户名或者密码错误！请再试一次。";
+               ViewBag.isError = is_error;
             // If we got this far, something failed, redisplay form
-            ModelState.AddModelError("", "The user name or password provided is incorrect.");
-            return View(model);
+            return View();
         }
 
         //

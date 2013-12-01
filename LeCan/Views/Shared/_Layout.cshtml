@@ -4,14 +4,16 @@
         <meta charset="utf-8" />
         <title>@ViewBag.Title - My ASP.NET MVC Application</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href='http://fonts.googleapis.com/css?family=Cherry+Swash' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="~/Content/buttons.css">
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
         @Scripts.Render("~/bundles/modernizr")
         @Styles.Render("~/Content/bootstrap")
     </head>
     <body>
-        <header>
-            <div class="content-wrapper">
+        <header class="text-center">
+            @*<div class="content-wrapper">
                 <div class="float-left">
                     <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
                 </div>
@@ -27,8 +29,12 @@
                         </ul>
                     </nav>
                 </div>
-            </div>
+            </div>*@
+            <b>lecan.com </b>乐餐网<br />
+            <span>轻松外卖，快乐就餐！</span>
+            <a href=@Url.Content("/account/login") class="button button-flat-highlight float_right">登录/注册</a>
         </header>
+
         <div id="body">
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">

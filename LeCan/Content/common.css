@@ -1,8 +1,50 @@
-﻿body {
+﻿/*body {
     width:980px;
-}
+}*/
 
 .middle_size
 {
     width:384px;
+}
+header
+{
+     background-color:#eeeeee;
+     font-family: 'Cherry Swash', 微软雅黑;
+     font-size:36px;
+     color:#00ccff;
+     box-shadow:inset 0 1px #fff, 0 1px 5px rgba(34,25,25,0.4);
+}
+header b
+{
+    font-size:60px;
+}
+header span
+{
+    font-size:24px;
+}
+
+.float_right
+{
+    float:right;
+    margin-right:50px;
+}
+
+#login_body
+{
+    width:960px;
+    margin:10px auto;
+    padding:100px 0;
+    box-shadow: 0 1px 5px rgba(34,25,25,0.4);
+}
+
+.div_border
+{
+    border:1px solid #dddddd;
+    border-top:hidden;
+    padding:20px 10px;
+    border-radius: 0 0 4px 4px;
+}
+#login_regis_form
+{
+    padding:15px 0;
 }
