@@ -29,7 +29,6 @@ namespace LeCan.Controllers
 
         //
         // POST: /Account/Login
-
         [HttpPost]
         [AllowAnonymous]
         public ActionResult Login(string inputName,string inputPassword)
@@ -37,12 +36,16 @@ namespace LeCan.Controllers
             string is_error = null;
             if (inputName=="yoyo"&&inputPassword=="123456")
             {
-                RedirectToAction("~/home/index");
+               return RedirectToAction("Index","Home");
             }
-               is_error = "用户名或者密码错误！请再试一次。";
-               ViewBag.isError = is_error;
-            // If we got this far, something failed, redisplay form
-            return View();
+            else
+            {
+                is_error = "用户名或者密码错误！请再试一次。";
+                ViewBag.isError = is_error;
+                // If we got this far, something failed, redisplay form
+                return View();
+            }
+
         }
 
         //
