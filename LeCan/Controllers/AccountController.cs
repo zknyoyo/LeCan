@@ -36,6 +36,7 @@ namespace LeCan.Controllers
             string is_error = null;
             if (inputName=="yoyo"&&inputPassword=="123456")
             {
+               FormsAuthentication.SetAuthCookie(inputName.ToString(), true);
                return RedirectToAction("Index","Home");
             }
             else
@@ -51,12 +52,10 @@ namespace LeCan.Controllers
         //
         // POST: /Account/LogOff
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            WebSecurity.Logout();
-
+            //WebSecurity.Logout();
+            FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
 

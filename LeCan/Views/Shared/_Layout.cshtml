@@ -13,26 +13,19 @@
     </head>
     <body>
         <header class="text-center">
-            @*<div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>*@
             <b>lecan.com </b>乐餐网<br />
             <span>轻松外卖，快乐就餐！</span>
-            <a href=@Url.Content("/account/login") class="button button-flat-highlight float_right">登录/注册</a>
+            @if (Request.IsAuthenticated)
+            {
+                <text>
+            <a href=@Url.Content("/account/logoff") class="button button-flat-highlight float_right">@User.Identity.Name /注销</a>
+                </text>
+            }
+            else
+            {            
+                 <a href=@Url.Content("/account/login") class="button button-flat-highlight float_right">登录/注册</a>
+            }
+
         </header>
 
         <div id="body">
